@@ -1,0 +1,15 @@
+@import "sizes";
+@import "colors";
+
+div#error {
+  width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: $white;
+  border-radius: 10px;
+  text-align: center;
+  border: solid 5px $red;
+  h1 {
+    font-weight: bold;
+  }
+}

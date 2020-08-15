@@ -1,0 +1,27 @@
+<% @title = "投稿編集" %>
+<div class="page-title">
+<h1>投稿</h1>
+</div>
+
+ <% if @article.errors.any? %>
+  <div class="notification is-danger">
+    <ul>
+      <% @article.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <%= form_with model: @article, url: :article do |f| %>
+          <%= render "shared/form", f: f %>
+          <%= f.submit '更新', class: "button is-success" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,38 @@
+<header>
+  <% if current_user %>
+    <span class="logo-mark"><%= link_to "Catalks", :articles %></span>
+  <% else %>
+    <span class="logo-mark"><%= link_to "Catalks", :root %></span>
+  <% end %>
+  
+  <%= content_tag(:span, flash.notice, class: "notice") if flash.notice %>
+  <%= content_tag(:span, flash.alert, class: "alert") if flash.alert %>
+  
+  <% if current_user %>
+    <%= link_to "ログアウト", :session, method: :delete, class: "links" %>
+    <%= link_to "アカウント", :account, class: "links" %>
+    <% if current_user.administrator? %>
+      <%= link_to "管理ページ", :admin_root, class: "links" %>
+    <% end %>
+    <div class="login-navbar" %>
+    <div class="navbar-item">
+      <%= link_to "投稿一覧", articles_path, class: "navbar-item button is-warning is-light" %>
+    </div>
+    <div class="navbar-item">
+      <%= link_to "新規投稿", new_article_path, class: "navbar-item button is-warning is-light" %>
+    </div>
+    <div class="navbar-item">
+      <%= link_to "ユーザー一覧", users_path, class: "navbar-item button is-warning is-light" %>
+    </div>
+    </div>
+  <% else %>
+    <div class="logout-navbar">
+      <div class="navbar-item">
+        <%= link_to "投稿一覧", articles_path, class: "navbar-item button is-warning is-light" %>
+      </div>
+      <div class="navbar-item">
+        <%= link_to "ユーザー一覧", users_path, class: "navbar-item button is-warning is-light" %>
+      </div>
+    </div>
+  <% end %> 
+</header>

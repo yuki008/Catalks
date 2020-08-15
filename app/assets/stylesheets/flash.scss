@@ -1,0 +1,18 @@
+@import "colors";
+@import "sizes";
+
+header {
+  span.notice, span.alert {
+    display: inline-block;
+    font-size: $tiny;
+    color: $white;
+    padding: $narrow $wide;
+    margin: 0 $wide;
+  }
+  span.notice {
+    background-color: $dark_blue;
+  }
+  span.alert {
+    background-color: $red;
+  }
+}

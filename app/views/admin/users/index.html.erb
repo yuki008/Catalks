@@ -1,0 +1,30 @@
+<% @title = "ユーザー管理表" %>
+<div class="page-title">
+<h1><%= @title %></h1>
+
+<table class="table">
+  <tr>
+    <th>ユーザー名</th>
+    <th>メールアドレス</th>
+    <th>停止フラグ</th>
+    <th>管理</th>
+    <th>アクション</th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.username %></td>
+      <td><%= user.email %></td>
+      <th><%= user.suspended? ? raw("&#x2611;") : raw("&#x2610;") %></th>
+      <th><%= user.administrator? ? raw("&#x2611;") : raw("&#x2610;") %></th>
+      <td>
+        <%= link_to "編集", [ :edit, :admin, user] %> |
+        <%= link_to "削除", [ :admin, user], method: :delete,
+          data: { confirm: "削除しますか？" } %> 
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<nav class="pagination">
+ <%= paginate @users %> 
+</nav>

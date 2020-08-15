@@ -1,0 +1,36 @@
+<% @title = "パスワード編集" %>
+<div class="page-title">
+  <h1><%= @title %></h1>
+</div>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <%= form_with model: @change_password_form, url: :password,
+          method: :patch do |f| %>
+        <div class="field">
+            <%= f.label :current_password, "現在のパスワード", class: "label" %>
+            <%= f.password_field :current_password, class: "input" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :new_password, "新しいパスワード", class: "label" %>
+            <%= f.password_field :new_password, class: "input" %>
+          </div>
+          
+          <div class="field">
+            <%= f.label :new_password_confirmation, "新しいパスワードの確認", class: "label" %>
+            <%= f.password_field :new_password_confirmation, class: "input" %>
+          </div>
+          
+          <div class="none">
+          <%= f.submit "更新", class: "button is-success" %>
+          <%= link_to "キャンセル", :account,  class: "button is-success" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

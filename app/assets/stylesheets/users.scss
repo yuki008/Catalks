@@ -1,0 +1,17 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "colors";
+@import "sizes";
+
+div.page-title {
+  
+  h1 {
+     margin: 0;
+     padding-top: 15px;
+     padding-bottom: 15px;
+     font-size: $normal;
+     color: $white;
+     background-color: #559A22;
+     font-weight: bold;
+     }
+}

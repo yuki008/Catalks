@@ -1,0 +1,18 @@
+<% @title = "トップページ" %>
+<div class="backimage">
+<div class="main-container">
+  <div class="boxes">
+    <h1 class="title">Life With Cat</h1>
+    <%= 
+      if !current_user
+        link_to "ログイン", :sign_in, class: "button"
+      end
+    %>
+    <%=
+      if !current_user
+         link_to "新規登録", :new_user, class: "new-links"
+      end
+    %>
+  </div>
+</div>
+</div>

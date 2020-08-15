@@ -1,0 +1,44 @@
+<% @title = "投稿一覧" %>
+<div class="page-title">
+<h1>投稿一覧</h1>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      <% @articles.each do |article| %>
+        <div class="column is-4">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <%= link_to article_path(article) do %>
+                  <img src="<%= article.image %>">
+                <% end %>
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <% if  article.user.image? %>
+                      <img src="<%= article.user.image %>" class: "profile_image" alt="ユーザーアイコン">
+                    <% else %>
+                      <img src="/assets/no-image.png" class: "profile_image" alt="ユーザーアイコン" >
+                    <% end %>
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <div class="title"><%=link_to article.user.username, user_path(article.user) %></div>
+                </div>
+              </div>
+
+              <div class="content">
+                <time><%= article.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

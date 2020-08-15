@@ -1,0 +1,59 @@
+<% @title = "投稿" %>
+<div class="page-title">
+  <h1><%= @title %></h1>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-7">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img src="<%= @article.image %>">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-4"><%= @article.title %></p>
+              </div>
+            </div>
+            <div class="content">
+              <table class="table is-narrow">
+                <tr>
+                  <th>投稿内容</th>
+                </tr>
+                <tr>
+                  <td><%= simple_format @article.body %></td>
+                </tr>
+              </table>
+              <% if @article.user.id == current_user.id %>
+                <%= link_to "編集画面へ", edit_article_path(@article), class: "button is-success" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-4">
+        <article class="panel is-link">
+          <p class="panel-heading">
+            By <%= @article.user.username %>
+          </p>
+          <div class="panel-block">
+            <p class="control">
+              <%= @article.user.profile %>
+            </p>
+          </div>
+          <%= link_to user_path(@article.user), class: "panel-block" do %>
+            <span class="panel-icon">
+              <i class="fas fa-user" aria-hidden="true"></i>
+            </span>
+            <%= @article.user.username %> さんのプロフ 
+          <% end %>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>

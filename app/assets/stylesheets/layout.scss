@@ -1,0 +1,81 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "colors";
+@import "sizes";
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body.back-image {
+  
+  background: image-url('cat.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;  
+}
+
+body.white {
+  // background: $white;
+   
+  background: image-url('cat_picture.png');
+  background-repeat: no-repeat;
+  background-size: cover;  
+}
+
+
+div#wrapper {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 100%;
+  margin: 0 auto;
+  padding-bottom: 48px;
+}
+
+header {
+  position: relative;
+  font-size: $large;
+  padding: $wide;
+  padding-bottom: 10px;
+  background-color: $orange;
+  color: #eeeeee;
+  span.logo-mark {
+    font-weight: bold;
+    font-size: 30px;
+    a {
+      color: $white; 
+    }
+  }
+  a.links {
+    color: $white;
+    font-size: $normal;
+    float: right;
+    margin-left: $wide;
+  }
+  .navbar-item {
+    display: inline;
+  }
+  .login-navbar {
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 8%;
+  }
+  .logout-navbar {
+    display: inline-block;
+    float: right;
+    margin-top: 10px;
+  }
+}
+footer {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  background-color: $yellow;
+  color: #eeeeee;
+  p {
+    text-align: center;
+    padding: $moderate;
+    margin: 0;
+  }
+}

@@ -1,0 +1,50 @@
+@import "sizes";
+@import "colors";
+
+div#wrapper {
+  div#container {
+    .main-container {
+      text-align: center;
+      color: $white;
+      margin-top: 13%;
+      h1.title {
+        font-size: $normal * 10;
+        margin: 0;
+        font-weight: normal;
+        color: $white;
+      }
+      .boxes {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+      }
+      a {
+        text-decoration: none;
+        display:inline-block;
+        margin-top: $wide * 5;
+      }
+      a.button {
+        font-size: $large;
+        background: $blue;
+        color: $white;
+        border-radius: 5px;
+        padding: $moderate * 2 $wide * 4;
+        display: block;
+        width: 15%;
+        margin: 0 auto;
+        margin-top: 50px;
+      }
+      a.button:hover {
+        background: $dark_blue;
+      }
+      a.new-links {
+        color: $white;
+        font-size: $normal;
+      }
+      a.new-links:hover {
+        border-bottom: 1px solid;
+      }
+    }
+  }
+}
+ 
