@@ -14,7 +14,7 @@ gem "bootsnap", ">= 1.4.2", require: false
 gem "jquery-rails"
 gem "jquery-ui-rails"
 gem "bootstrap-sass"
-
+gem "uglifier", "3.2.0"
 gem "bcrypt"
 gem "rails-i18n"
 gem "kaminari"
